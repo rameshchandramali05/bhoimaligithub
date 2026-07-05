@@ -1,0 +1,125 @@
+
+  
+  <style>
+    .carousel-container {
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel-slide img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    /* Buttons - Desktop look */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.4); /* हल्का transparent white */
+      color: #000;
+      border: none;
+      padding: 12px 16px;
+      cursor: pointer;
+      z-index: 2;
+      transition: 0.3s;
+    }
+    .carousel-btn.prev {
+      left: 0;
+      border-radius: 0 50% 50% 0; /* half-circle */
+    }
+    .carousel-btn.next {
+      right: 0;
+      border-radius: 50% 0 0 50%;
+    }
+    .carousel-btn:hover {
+      background: rgba(255,255,255,0.8);
+    }
+
+    /* Mobile look → transparent only arrows */
+    @media (max-width: 768px) {
+      .carousel-btn {
+        background: none !important;  /* remove bg */
+        color: white;                 /* arrow white */
+        font-size: 24px;              /* bigger arrow */
+        padding: 6px;                 /* compact */
+      }
+    }
+
+    /* Dots */
+    .carousel-dots {
+      position: absolute;
+      bottom: 15px;   
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 2;
+    }
+    .carousel-dots button {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.6);
+      cursor: pointer;
+    }
+    .carousel-dots button.active {
+      background: white;
+    }
+    @media (max-width: 768px) {
+      .carousel-dots button { width: 10px; height: 10px; }
+    }
+  </style>
+
+
+
+
+
+
+<div class="carousel-container" id="myCarousel">
+  <div class="carousel-slide">
+    <img src="https://drive.google.com/thumbnail?id=13vFdNti3Ndyjfgi2ALiCYbsjPQwnd8I5&sz=w1000" class="active h-150" alt="Mali Mananda">
+
+    <img src="https://drive.google.com/thumbnail?id=1FFlbCuEPD0GDfPp6XN-Az-tOZsk-s6kb&sz=w1000" alt="SAMAJ-RATAN">
+
+    <img src="https://drive.google.com/thumbnail?id=10ifVGNXiFwzylRuEt1sMhjvKZXA_xJPG&sz=w1000" alt="Mali-Sangam">
+
+    <img src="https://drive.google.com/thumbnail?id=1XxFKopkDvFsBpFm2hoZ3KP31hR_WNGia&sz=w1000" alt="Mali-PID-Card">
+
+  </div>
+  
+  <!-- Buttons -->
+  <button class="carousel-btn prev fs-5">&#10094;</button>
+  <button class="carousel-btn next fs-5">&#10095;</button>
+
+  <!-- Dots -->
+  <div class="carousel-dots"></div>
+</div>
+
+<script>
+loadSection("header","header.html").then(() => {
+    initCarousel();
+});
+
+
+
+</script> 
+
+
+

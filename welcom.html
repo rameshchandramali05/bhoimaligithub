@@ -1,0 +1,53 @@
+
+  <style>
+ 
+
+    .scroll-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 1000% 1000%;
+      animation: rainbowBG 6s ease infinite;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+      white-space: nowrap;
+    }
+
+    .scroll-text {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      line-height: 1.6em;
+      text-shadow: 0 0 5px #fff,
+                   0 0 10px #ff00de,
+                   0 0 20px #ff00de,
+                   0 0 40px #ff00de,
+                   0 0 80px #ff00de;
+      padding-right: 50px; /* text के बीच gap */
+    }
+
+    .scroll-wrapper {
+      display: inline-block;
+      animation: scroll-left 6s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes rainbowBG {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+
+  <div class="scroll-container">
+    <div class="scroll-wrapper">
+      <span class="scroll-text">🌈 भोई माली समाज व भोई माली युवा संगठन आपका हार्दिक स्वागत करता हैं 🌟🌟</span>
+      <span class="scroll-text">🌈 भोई माली समाज व भोई माली युवा संगठन आपका हार्दिक स्वागत करता हैं 🌟🌟</span>
+    </div>
+  </div>
